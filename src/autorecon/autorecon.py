@@ -28,7 +28,7 @@ import shutil
 
 # Globals
 verbose = 0
-nmap = "-vv --reason -Pn"
+nmap = "-vv -Pn"
 srvname = ""
 heartbeat_interval = 60
 port_scan_profile = None
@@ -665,6 +665,13 @@ def scan_host(target, concurrent_scans, outdir):
     os.makedirs(scandir, exist_ok=True)
 
     os.makedirs(os.path.abspath(os.path.join(scandir, 'xml')), exist_ok=True)
+
+    #adding new nmap directory
+    os.makedirs(os.path.abspath(os.path.join(scandir, 'nmap')), exist_ok=True)
+
+
+    #adding new ports directory
+    os.makedirs(os.path.abspath(os.path.join(scandir, 'recon')), exist_ok=True)
 
     # Use a lock when writing to specific files that may be written to by other asynchronous functions.
     target.lock = asyncio.Lock()
