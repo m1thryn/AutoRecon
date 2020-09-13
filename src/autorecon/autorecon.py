@@ -671,7 +671,11 @@ def scan_host(target, concurrent_scans, outdir):
 
 
     #adding new ports directory
-    os.makedirs(os.path.abspath(os.path.join(scandir, 'recon')), exist_ok=True)
+    recondir = os.makedirs(os.path.abspath(os.path.join(scandir, 'recon')), exist_ok=True)
+
+    #adding screenshots directory
+    os.makedirs(os.path.abspath(os.path.join(recondir, 'screenshots')), exist_ok=True)
+
 
     # Use a lock when writing to specific files that may be written to by other asynchronous functions.
     target.lock = asyncio.Lock()
