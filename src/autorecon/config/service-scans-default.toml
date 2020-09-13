@@ -119,7 +119,7 @@ ignore-service-names = [
 
     [[http.scan]]
     name = 'wkhtmltoimage'
-    command = 'if hash wkhtmltoimage 2> /dev/null; then wkhtmltoimage --format png {scheme}://{address}:{port}/ {scandir}/recon/{protocol}_{port}_{scheme}_screenshot.png; fi'
+    command = 'if hash wkhtmltoimage 2> /dev/null; then wkhtmltoimage --format png {scheme}://{address}:{port}/ {scandir}/recon/screenshots/{protocol}_{port}_{scheme}_screenshot.png; fi'
 
     [[http.scan]]
     name = 'whatweb'
