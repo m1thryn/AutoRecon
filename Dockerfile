@@ -1,6 +1,7 @@
-#sudo docker build -t tib3rius/autorecon .
+#sudo docker build -t m1thryn/autorecon .
 #mkdir /root/results
 #Usage: sudo docker run -it -v /root/results:/results --rm --name autorecon-container tib3rius/autorecon 127.0.0.1
+#Real Usage: sudo docker run -it -v /home/ian/htb/doctor/results:/results -v /etc/hosts:/etc/hosts --rm --name autorecon m1thryn/autorecon --single-target doctor.htb
 
 FROM kalilinux/kali-bleeding-edge:latest
 RUN apt-get update
